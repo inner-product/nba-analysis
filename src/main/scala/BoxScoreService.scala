@@ -67,7 +67,7 @@ object BoxScoreService {
 
   implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
 
-  def boxScore(boxScore: BoxScore): Future[Either[List[Error], Unit]] = {
+  def post(boxScore: BoxScore): Future[Either[List[Error], Unit]] = {
     def printStatisticalLeaders(lines: List[BoxScoreLine]): Unit = {
       val points = lines.sortBy(line => line.points).last.player
       val rebounds = lines.sortBy(line => line.rebounds).last.player
