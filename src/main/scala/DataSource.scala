@@ -78,9 +78,9 @@ object DataSource {
    * This is the primary method you have to implement in this object. You need
    * to return [[Event]]s as a minimum, for which you will have to implement the
    * `Event` type and parse the raw data into this type. You might want to add
-   * more structure than just [[Event]]. For example, what do you return when
-   * there are no more events?
+   * more structure than just [[Event]]. For example, what do you return if there
+   * is malformed data?
    */
-  def event(reader: CsvReader[ReadResult[List[String]]]): Event =
+  def event(row: List[String]): Event =
     ???
 }
